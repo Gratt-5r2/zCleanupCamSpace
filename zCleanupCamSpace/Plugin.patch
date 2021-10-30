@@ -1,0 +1,25 @@
+#engine [G1]
+	#patch [Check alpha intersection]
+		#assembler [0x005A6323]
+			push	eax
+			mov		eax, dword ptr [$traceRayTransp]
+			test	eax, eax
+			pop		eax
+			jnz		0x005A632D
+			orgcode
+		#/assembler
+	#/patch
+#/engine
+
+#engine [G2A]
+	#patch [Check alpha intersection]
+		#assembler [0x005C8233]
+			push	eax
+			mov		eax, dword ptr [$traceRayTransp]
+			test	eax, eax
+			pop		eax
+			jnz		0x005C823D
+			orgcode
+		#/assembler
+	#/patch
+#/engine
